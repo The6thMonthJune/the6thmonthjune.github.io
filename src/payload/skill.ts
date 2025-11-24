@@ -4,24 +4,28 @@ export const skill: iSkill.Payload = {
   list: [
     {
       group: 'Frontend',
-      list: ['React', 'React Native', 'TypeScript'],
+      list: ['React', 'React Native', 'TypeScript', 'JavaScript'],
     },
     {
       group: 'Backend',
       list: [
         'Java',
-        'Kotlin',
+        'Python',
         'Spring Boot',
         'JPA',
         'Mysql',
-        'Mybatis',
-        'Kafka',
+        'C',
+        'C++',
         'Oracle',
       ],
     },
     {
       group: 'Utility',
-      list: ['Slack', 'Git', 'Notion', 'IDEA', 'Jenkins', 'Nexacro N'],
+      list: ['Slack', 'Git', 'Notion', 'Jira', 'Figma'],
+    },
+    {
+      group: 'ETC',
+      list: ['Photoshop', 'Premiere Pro']
     },
   ],
 }
