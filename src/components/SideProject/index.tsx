@@ -7,7 +7,9 @@ import SideProjectRow from './row'
 const SideProjectComponent = ({
   payload,
 }: PropsWithChildren<{ payload: iSideProject.Payload }>) => {
-  if (payload.disable) return null
+  // if (payload.disable) return null
+  // 훅들은 항상 컴포넌트 최상단에서 먼저 호출되어야 해.
+  // 조건문 'if (payload.disable) return null' 보다 위에 위치해야 함!
 
   const [open, setOpen] = useState(false)
   const [pjt, setPjt] = useState<iSideProject.SideProject>({
@@ -20,11 +22,18 @@ const SideProjectComponent = ({
     techStack: [],
     github: '',
     projectDescription: [],
-  })
+  });
+
+  // 이제 여기서 payload.disable에 따라 렌더링 여부를 결정헤도 됨.
+  // 훅들은 이미 호출된 상태니까 규칙 위반 아님!
+
+  if(payload.disable){
+    return null;
+  }
 
   const toggle = () => {
     setOpen(!open)
-  }
+  };
 
   return (
     <React.Fragment>
@@ -54,4 +63,4 @@ const SideProjectComponent = ({
   )
 }
 
-export default SideProjectComponent
+export default SideProjectComponent;
